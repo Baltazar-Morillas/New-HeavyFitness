@@ -1,10 +1,9 @@
-import React from 'react'
-import ItemList from './ItemList'
-import {useParams} from "react-router-dom"
+import {useParams} from 'react-router-dom'
+import ItemDetail from './ItemDetail'
 
-const ItemListContainer = () => {
-  const {category}=useParams()
-
+const ItemDetailContainer = () => {
+  const {id}=useParams()
+  
   const productos = [
     {
       id: 1,
@@ -32,41 +31,14 @@ const ItemListContainer = () => {
       precio: 7300
     }
   ];
-  const filteredProducts=productos.filter((producto)=>producto.category==category)
 
-  const getProductos = new Promise((resolve, reject) => {
-      if (productos.length > 0) {
-        setTimeout(() => {
-          resolve(productos);
-        }, 2000);
-      } else {
-        reject(new Error('No hay productos'));
-      }
-    });
-    getProductos
-    .then((res)=>{
-      console.log(res)
-    })
-    .catch((error)=>{
-      console.log(error)
-    })
-
-  /*async function fetchingProductos() {
-    try {
-      const productosFetched = await getProductos();
-      console.log(productosFetched)
-    } catch (error) {
-      console.log(error);
-    }
-  }*/
+  const filteredProducts=productos.filter((productos)=>productos.id==id)
   
-  
-
   return (
-    <>
-      <ItemList productos={filteredProducts}/>
-    </>
+    <div>
+      {filteredProducts.map((u)=><ItemDetail productos={u}/>)}
+    </div>
   )
 }
 
-export default ItemListContainer
+export default ItemDetailContainer
