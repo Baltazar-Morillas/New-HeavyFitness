@@ -1,5 +1,8 @@
 # New-HeavyFitness
 
+### Que es HeavyFitness?
+HeavyFitness es un proyecto para el curso de ReactJS de CoderHouse donde utilice este framework para darle mas dinamismo a mi pagina. Este proyecto tiene el objetivo de vender los mejores productos a precios razonables para deportistas que se quieren desempeñar al maximo en sus actividades fisicas.
+
 ### GIT 
 ![HeavyFitness](https://github.com/Baltazar-Morillas/New-HeavyFitness/assets/111323075/679d9d5e-22bb-4c95-a3bb-80c3706bed14)
 
