@@ -4,11 +4,17 @@ import {CartContext} from "../context/ShopppingCartContext"
 import "../index.css"
 
 const SendOrder = () => {
-    const {cart, totalPrecio} = useContext(CartContext)
+    const {cart, totalPrecio, clearCart} = useContext(CartContext)
     const [telefono, setTelefono] = useState("")
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [orderId, setOrderId] = useState(null)
+
+    const handleClick=(e)=>{
+        setTimeout(()=>{
+            clearCart()
+        }, 2000)
+    }
 
     const db = getFirestore()
     const handleSubmit = (e)=>{
@@ -43,7 +49,7 @@ const SendOrder = () => {
             <input type='number' placeholder='Telefono'
                 onChange={(e)=>setTelefono(e.target.value)}
             />
-            <button type='submit'>Enviar informacion</button>
+            <button type='submit' onClick={(e)=>handleClick(e)}>Enviar informacion</button>
         </form>
         </div>
         <p>Numero de orden: {orderId}</p>
