@@ -1,6 +1,4 @@
 import React from 'react'
-import { Menu, MenuButton, MenuList, MenuItem, Button } from '@chakra-ui/react'
-import { ChevronDownIcon } from '@chakra-ui/icons'
 import CartWidget from './CartWidget'
 import "../index.css"
 import { Link } from 'react-router-dom'
@@ -14,18 +12,18 @@ const NavBar = () => {
       <h1 className='navh1'>
         HeavyFitness
       </h1>
-      <ul>
+      <ul className='categorias'>
         <Link to={"/category/suplementos"}>
-          Suplementos
+          <p>Suplementos</p>
         </Link>
         <Link to={"/category/accesorios"}>
-          Accesorios
+          <p>Accesorios</p>
         </Link>
         <Link to={"/category/ropa"}>
-          Ropa
+          <p>Ropa</p>
         </Link>
         <Link to={"/contacto"}>
-          Contacto
+          <p>Contacto</p>
         </Link>
       </ul>
       <Link to={"/cart"}>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import {
   Card,
   CardBody,
@@ -8,14 +8,28 @@ import {
   Text,
   Divider,
   CardFooter,
-  ButtonGroup,
-  Button,
+  // ButtonGroup,
+  // Button,
 } from "@chakra-ui/react";
+import {CartContext} from '../context/ShopppingCartContext'
+import {Button} from '@chakra-ui/react'
+import {Link} from 'react-router-dom'
+import ItemCount from "./ItemCount";
+import "../index.css"
+
 //import { Link } from "react-router-dom";
 
 const ItemDetail = (props) => {
+  const [goToCart, setGoToCart] = useState(false)
+  const {addToCart} = useContext(CartContext)
+
+  const onAdd = (quantity)=>{
+    setGoToCart(true)
+    addToCart(props.productos, quantity)
+  }
+
   return (
-    <Card maxW="sm" id={props.productos.id}>
+    <Card maxW="sm" id={props.productos.nombre} className="elementosCard">
       <CardBody>
         <Image
           src={props.productos.img}
@@ -29,10 +43,16 @@ const ItemDetail = (props) => {
         </Stack>
       </CardBody>
       <Divider />
-      <CardFooter>
-        <ButtonGroup spacing="2">
-            <Button>Añadir al carrito</Button>
-        </ButtonGroup>
+      <CardFooter className="contador">
+        {
+          goToCart
+          ?
+          <Link to={"/cart"}>
+            <Button>Finalizar compra</Button>
+          </Link>
+          :
+          <ItemCount onAdd={onAdd}/>
+        }
       </CardFooter>
     </Card>
   );

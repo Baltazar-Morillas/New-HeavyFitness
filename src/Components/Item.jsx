@@ -1,4 +1,4 @@
-import React from "react";
+import "../index.css"
 import {
   Card,
   CardBody,
@@ -16,8 +16,9 @@ import { Link } from "react-router-dom";
 //Este imprime la card
 const Item = (props) => {
   return (
-    <Card maxW="sm" id={props.productos.id}>
-      <CardBody>
+    <div className="cardsStyles">
+      <Card maxW="sm" id={props.productos.id}>
+      <CardBody className="cardItem">
         <Image
           src={props.productos.img}
           alt={props.productos.nombre}
@@ -25,7 +26,7 @@ const Item = (props) => {
         />
         <Stack mt="6" spacing="3">
           <Heading size="md">{props.productos.nombre}</Heading>
-          <Text>{props.productos.descripcion}</Text>
+          {/* <Text>{props.productos.descripcion}</Text> */}
         </Stack>
       </CardBody>
       <Divider />
@@ -39,6 +40,7 @@ const Item = (props) => {
         </ButtonGroup>
       </CardFooter>
     </Card>
+    </div>
   );
 };
 

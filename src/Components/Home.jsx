@@ -1,13 +1,26 @@
-import React from "react";
+import { useState } from 'react';
+import "../index.css"
+import ItemListContainer from './ItemListContainer';
 
 const Home = () => {
+    const [index, setIndex] = useState(0);
+  
+    const handleSelect = (selectedIndex) => {
+      setIndex(selectedIndex);
+  };
+
   return (
-    <div>
-      <div class="textoInicio">
-        <h2>Te damos la bienvenida</h2>
-        <p>Explora nuestras secciones con una gran variedad de productos.</p>
-        <p>HeavyFitness busca lo mejor para vos.</p>
+    <>
+      <div className='home'>
+          <h2>Te damos la bienvenida</h2>
+          <p>Explora nuestras secciones con una gran variedad de productos.</p>
+          <p>HeavyFitness busca lo mejor para vos.</p>
       </div>
+      <ItemListContainer/>
+    </>
+  );
+};
+{/* 
       <br />
       <div
         id="carouselExampleCaptions"
@@ -93,9 +106,6 @@ const Home = () => {
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
-      </div>
-    </div>
-  );
-};
+      </div> */}
 
-export default Home;
+export default Home

@@ -13,6 +13,10 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
 
 a {
   font-weight: 500;
@@ -23,11 +27,11 @@ a:hover {
   color: #535bf2;
 }
 
-body {
+.body {
   margin: 0;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 101vh;
 }
 
 h1 {
@@ -54,23 +58,162 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.home{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+  font-family: 'Kanit', sans-serif;
+}
+
 .navDiv{
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
-  background-color: #0A2647;
+  background-color: #00070f;
   color:#ffffff;
+  font-family: 'Kanit', sans-serif;
+}
+.navDiv img{
+  width: 150px;
+}
+
+.navDiv, .categorias{
+  display: flex;
+}
+
+.navDiv, .categorias p{
+  margin-bottom: 0rem !important;
+  padding: 10px;
+}
+
+.elementosCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .items{
   display: flex;
+  margin: 10px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cardDetail{
+  display: flex;
+  justify-content: center;
+  padding: 25px;
+}
+
+.cardsStyles{
+  padding: 20px;
+}
+
+.cardItem{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .carrito{
-  display:flex;
+  display: flex;
+  padding: 10px;
+  align-items: center;
 }
 
+.carrito div{
+  padding: 5px;
+}
+
+.totalCarrito{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+}
+
+.contador{
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.itemCart{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.itemCart img{
+  width: 150px;
+}
+
+.checkout{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}
+
+.checkout input{
+  padding: 10px;
+}
+
+.carritoVacio{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.contacto{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contacto .textarea{
+  background: aliceblue;
+}
+
+.contacto h4{
+  padding: 20px;
+}
+
+.FAQ h2{
+  padding: 25px;
+}
+.header li, .footer ul div {
+  margin: 15px;
+  font-family: 'Kanit', sans-serif; }
+
+.footer {
+  /* position: absolute;
+  bottom: 0; */
+  background-color: black; 
+  width: 100%;   
+}
+  .footer ul {
+    color: white;
+    list-style: none;
+    display: flex;
+    width: 400px;
+    margin: 0 auto;
+    justify-content: center; }
+    .footer ul div a {
+      color: white;
+      text-decoration: none; }
+      .footer ul div a:hover {
+        color: #14ffef;
+        font-weight: bold; }
+  .footer p {
+    margin: 0; }
+  .footer i {
+    padding: 5px; }
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
